@@ -219,10 +219,30 @@
         font-size: 8rem;
         color: rgba(255, 255, 255, 0.7);
         transition: var(--transition);
+        overflow: hidden;
       }
 
       .hero-avatar:hover {
         transform: scale(1.05);
+      }
+
+      /* Profile Image Styling - FIXED */
+      .profile-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 0;
+        transition: var(--transition);
+        display: block;
+      }
+
+      .hero-avatar .profile-image:hover {
+        transform: scale(1.1);
+      }
+
+      .about-avatar .profile-image:hover {
+        transform: scale(1.1);
       }
 
       /* Section Styles */
@@ -281,6 +301,7 @@
         font-size: 6rem;
         color: white;
         margin: 0 auto;
+        overflow: hidden;
       }
 
       .about-text {
@@ -720,7 +741,7 @@
       <div class="hero-content">
         <div class="hero-text">
           <h1>Dharmik V. Savani</h1>
-          <div class="subtitle">Cloud & AI/ML Developer</div>
+          <div class="subtitle">Cloud & AI/ML Learner</div>
           <p>
             Enthusiastic about cloud technologies and AI-ML, seeking challenges
             to enhance my skills and apply my expertise in optimizing cloud
@@ -737,11 +758,16 @@
           </div>
         </div>
         <div class="hero-image">
-    <div class="hero-avatar">
-        <img src="profile.jpg" alt="Dharmik V. Savani" class="profile-image">
-    </div>
-</div>
-</div>
+          <div class="hero-avatar">
+            <!-- Replace 'profile.png' with your actual image filename -->
+            <img
+              src="profile.png"
+              alt="Dharmik V. Savani"
+              class="profile-image"
+            />
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- About Section -->
@@ -753,14 +779,20 @@
             Learn more about my background, skills, and passion for technology
           </p>
         </div>
-        <div class="about-image">
+        <div class="about-content">
+          <div class="about-image">
             <div class="about-avatar">
-                <img src="profile.jpg" alt="Dharmik V. Savani" class="profile-image">
+              <!-- Replace 'profile.png' with your actual image filename -->
+              <img
+                src="profile.png"
+                alt="Dharmik V. Savani"
+                class="profile-image"
+              />
             </div>
-        </div>
+          </div>
           <div class="about-text">
             <p>
-              I'm a passionate Cloud & AI/ML Developer currently pursuing MSc in
+              I'm a passionate Cloud & AI/ML Learner currently pursuing MSc in
               Web Technology and Systems Engineering from Isla-Gaia. With a
               background in Physics and hands-on experience in cloud
               technologies, I specialize in creating innovative solutions that
@@ -1181,7 +1213,7 @@
               </div>
               <div>
                 <h4>Email</h4>
-                <p>dharmik.savani.pt@gmail.com</p>
+                <p>dharmik.savani@email.com</p>
               </div>
             </div>
             <div class="contact-item">
@@ -1358,9 +1390,8 @@
       // Dynamic typing effect for hero subtitle (optional enhancement)
       function typeEffect() {
         const titles = [
-          "Cloud & AI/ML Developer",
+          "Cloud & AI/ML Learner",
           "AWS Solutions Architect",
-          "Full-Stack Developer",
           "Problem Solver",
         ];
         const subtitle = document.querySelector(".hero-text .subtitle");
